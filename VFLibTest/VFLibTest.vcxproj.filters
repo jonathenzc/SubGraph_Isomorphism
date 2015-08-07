@@ -78,6 +78,9 @@
     <ClCompile Include="xsubgraph.cc">
       <Filter>源文件\VFLib_Src</Filter>
     </ClCompile>
+    <ClCompile Include="DeleteSameEdge.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="allocpool.h">
@@ -142,6 +145,9 @@
     </ClInclude>
     <ClInclude Include="xsubgraph.h">
       <Filter>头文件\VFLib_Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Role.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

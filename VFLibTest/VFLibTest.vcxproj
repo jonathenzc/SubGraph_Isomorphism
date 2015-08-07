@@ -15,6 +15,7 @@
     <ClCompile Include="argloader.cc" />
     <ClCompile Include="argraph.cc" />
     <ClCompile Include="CountMatching.cpp" />
+    <ClCompile Include="DeleteSameEdge.cpp" />
     <ClCompile Include="error.cc" />
     <ClCompile Include="gene.cc" />
     <ClCompile Include="gene_mesh.cc" />
@@ -41,6 +42,7 @@
     <ClInclude Include="gene.h" />
     <ClInclude Include="gene_mesh.h" />
     <ClInclude Include="match.h" />
+    <ClInclude Include="Role.h" />
     <ClInclude Include="sd_state.h" />
     <ClInclude Include="sortnodes.h" />
     <ClInclude Include="state.h" />

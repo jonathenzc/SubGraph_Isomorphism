@@ -254,7 +254,7 @@ void ARGEdit::InsertEdge(node_id id1, node_id id2, void* attr)
         p=p->next;
       }
     if (p!=NULL && p->to==id2)
-      error("Bad param 2 in ARGEdit::InsertEdge: %d", (int)id2);
+      error("Bad param 2 in ARGEdit::InsertEdge: %d,%d", (int)id1,(int)id2);
 
     if (p0==NULL)
       { e->next=pn->edges;
