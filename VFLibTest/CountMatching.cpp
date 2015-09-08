@@ -2,6 +2,7 @@
 #include "argedit.h"
 #include "match.h"
 #include "vf2_sub_state.h"
+#include "vf_sub_state.h"
 
 #include <iostream>
 #include <fstream>
@@ -27,6 +28,7 @@ void getNodeEdge(ARGEdit &ed,string nodeName,string edgeName)
 	{
 		nodeFile >> nodeID >> role;
 
+		//cout << nodeID << " " << role << endl;
 		ed.InsertNode(new Role(role));
 	}
 
@@ -94,19 +96,19 @@ int main()
 
 	//getData(pattern_ed,4);
 	//getData(data_ed,5);
-
-	ARGraph<Role, void> pattern_g(&pattern_ed);
 	ARGraph<Role, void> data_g(&data_ed);
+	ARGraph<Role, void> pattern_g(&pattern_ed);
 
 	//设置属性清除器
-	pattern_g.SetNodeDestroyer(new RoleDestroyer());
 	data_g.SetNodeDestroyer(new RoleDestroyer());
+	pattern_g.SetNodeDestroyer(new RoleDestroyer());
 
 	//设置属性比较器
 	data_g.SetNodeComparator(new RoleComparator());
+	pattern_g.SetNodeComparator(new RoleComparator());
 
 	//创建子图异构的初始状态
-	VF2SubState s0(&pattern_g, &data_g);
+	VFSubState s0(&pattern_g, &data_g);
 
 	//创建输出文件
 	FILE *f = fopen("subIso.txt","w");

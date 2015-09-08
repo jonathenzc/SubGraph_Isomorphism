@@ -1,4 +1,7 @@
 #include "argraph.h"  //AttrComparator∫ÕAttrDestroyer‘⁄argraph.h÷–
+#include <iostream>
+
+using namespace std;
 
 class Role
 {
@@ -13,7 +16,7 @@ public:
 
 	void setRoleAttr(int theRole)
 	{
-		roleAttr = theRole;
+		this->roleAttr = theRole;
 	}
 
 private:
@@ -34,12 +37,14 @@ class RoleComparator : public AttrComparator
 {
 public:
 	RoleComparator()
-	{}
+	{
+	}
 
 	virtual bool compatible(void *nodeA, void *nodeB)
 	{
 		Role *a = (Role *)nodeA;
 		Role *b = (Role *)nodeB;
+		//cout << a->getRoleAttr() << " a b " << b->getRoleAttr();
 		return a->getRoleAttr() == b->getRoleAttr();
 	}
 };
